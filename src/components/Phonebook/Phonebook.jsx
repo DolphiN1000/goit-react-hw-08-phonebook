@@ -10,8 +10,7 @@ import { FidgetSpinner } from 'react-loader-spinner';
 import {
   fetchAddContact,
   fetchAllContacts,
-  fetchDeleteContact,
-} from 'redux/phonebook/phonebook-operations';
+  } from 'redux/phonebook/phonebook-operations';
 
 import {
     getFilteredContacts,
@@ -36,9 +35,7 @@ const Phonebook = () => {
     dispatch(fetchAddContact({ name, number }));
   };
 
-  const handleDeleteContact = id => {
-    dispatch(fetchDeleteContact(id));
-  };
+  
 
   const handleFilter = ({ target }) => {
     dispatch(setFilter(target.value));
@@ -69,8 +66,6 @@ const Phonebook = () => {
         <Filter handleChange={handleFilter} />
         {isContacts && (
           <ContactsList
-            contacts={filteredContacts}
-            deleteContact={handleDeleteContact}
           />
         )}
         {!isContacts && <p>Not yet added contacts</p>}

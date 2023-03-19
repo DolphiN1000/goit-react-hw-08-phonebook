@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import ContactsListItem from './ContactsListItem/ContactsListItem';
 
 import styles from './contactList.module.scss';
+import { getFilteredContacts } from 'redux/phonebook/phonebook-selectors';
+import { useSelector } from 'react-redux';
 
-
-const ContactsList = ({ contacts, deleteContact }) => {
+const ContactsList = () => {
   // const contactsSorted = contacts;
   // console.log(contacts)
   // .sort(function (a, b) {
@@ -18,6 +19,7 @@ const ContactsList = ({ contacts, deleteContact }) => {
   //   return 0;
   // });
 
+  const contacts = useSelector(getFilteredContacts)
   const elements = contacts.map(({ id, name, number }) => {
     return (
       <ContactsListItem
@@ -25,7 +27,6 @@ const ContactsList = ({ contacts, deleteContact }) => {
         id={id}
         name={name}
         number={number}
-        deleteContact={deleteContact}
       />
     );
   });
@@ -47,5 +48,4 @@ ContactsList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ),
-  deleteContact: PropTypes.func.isRequired,
 };
