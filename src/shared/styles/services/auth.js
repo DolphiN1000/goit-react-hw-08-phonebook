@@ -42,4 +42,4 @@ export const logout = async() => {
     return data;
 
 }
-export default instancePhonebook
+export default instancePhonebook;
