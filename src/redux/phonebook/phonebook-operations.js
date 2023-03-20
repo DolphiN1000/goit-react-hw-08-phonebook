@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as api from '../../shared/styles/services/phonebookAPI';
+import * as api from '../../shared/services/phonebookAPI';
 
 
 export const fetchAllContacts = createAsyncThunk(

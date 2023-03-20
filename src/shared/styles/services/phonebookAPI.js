@@ -1,8 +1,4 @@
-import axios from 'axios';
-
-const phonebookInstance = axios.create({
-  baseURL: 'https://6414c7dce8fe5a3f3a0f7036.mockapi.io/api/contacts',
-});
+import phonebookInstance from './auth';
 
 export const getAllContacts = async () => {
   const { data } = await phonebookInstance.get('/');

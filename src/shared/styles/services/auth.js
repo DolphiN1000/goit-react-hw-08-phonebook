@@ -1,32 +1,32 @@
 import axios from "axios";
 
-const instancePhonebook = axios.create({
+const phonebookInstance = axios.create({
     baseURL: 'https://connections-api.herokuapp.com/',
 })
 
 const setToken = token => {
-    if (tocen) {
-        return instance.defaults.headers.authorization = `Bearer &{token}`; 
+    if (token) {
+        return phonebookInstance.defaults.headers.authorization = `Bearer &{token}`; 
     }
-    instance.defaults.headers.authorization = '';
+    phonebookInstance.defaults.headers.authorization = '';
 }
 
 export const signup = async (data) => {
-    const {data:result} = await instancePhonebook.post('/user/signup', data);
+    const {data:result} = await phonebookInstance.post('/user/signup', data);
     setToken(result.token);
-    return redult;
+    return result;
 }
 
 export const login = async (data) => {
-    const{data: result} = await instancePhonebook.post('/user/login', data);
-    setToken(redult.token);
+    const{data: result} = await phonebookInstance.post('/user/login', data);
+    setToken(result.token);
     return result;
 }
 
 export const getCurrent = async (token) => {
     try {
-        setToken;
-        const {data} = await instancePhonebook.get('/user/current');
+        setToken();
+        const {data} = await phonebookInstance.get('/user/current');
         return data;
     }
     catch(error) {
@@ -37,9 +37,9 @@ export const getCurrent = async (token) => {
 }
 
 export const logout = async() => {
-    const {data} = await instancePhonebook.post('user/logout');
+    const {data} = await phonebookInstance.post('user/logout');
     setToken();
     return data;
 
 }
-export default instancePhonebook;
+export default phonebookInstance;
