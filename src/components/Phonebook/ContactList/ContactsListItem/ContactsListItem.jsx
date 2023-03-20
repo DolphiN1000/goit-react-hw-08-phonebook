@@ -7,6 +7,7 @@ import { fetchDeleteContact } from 'redux/phonebook/phonebook-operations';
 
 const ContactsListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
+
   const handleDeleteContact = id => {
     dispatch(fetchDeleteContact(id));
   };
@@ -27,4 +28,4 @@ ContactsListItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-}
+};

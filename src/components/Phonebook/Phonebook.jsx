@@ -1,45 +1,26 @@
 import '../../shared/styles/styles.scss';
-
-import ContactsForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-
-
 import { lazy, Suspense } from 'react';
 import { FidgetSpinner } from 'react-loader-spinner';
 
-import {
-  fetchAddContact,
-  fetchAllContacts,
-  } from 'redux/phonebook/phonebook-operations';
+import { fetchAllContacts } from 'redux/phonebook/phonebook-operations';
 
-import {
-    getFilteredContacts,
-} from 'redux/phonebook/phonebook-selectors';
+import { getFilteredContacts } from 'redux/phonebook/phonebook-selectors';
 
 import styles from './phonebook.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-
-import { setFilter } from 'redux/filter/filter-slice';
+const ContactsForm = lazy(() => import('./ContactForm/ContactForm'));
+const Filter = lazy(() => import('./Filter/Filter'));
 const ContactsList = lazy(() => import('./ContactList/ContactList'));
+
+
 const Phonebook = () => {
   const filteredContacts = useSelector(getFilteredContacts);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchAllContacts());
   }, [dispatch]);
-
-  const handleAddContact = ({ name, number }) => {
-    dispatch(fetchAddContact({ name, number }));
-  };
-
-  
-
-  const handleFilter = ({ target }) => {
-    dispatch(setFilter(target.value));
-  };
 
   const isContacts = Boolean(filteredContacts.length);
 
@@ -60,14 +41,10 @@ const Phonebook = () => {
     >
       <div className={styles.container}>
         <h1>Phonebook</h1>
-
-        <ContactsForm onSubmit={handleAddContact} />
+        <ContactsForm />
         <h2>Contacts</h2>
-        <Filter handleChange={handleFilter} />
-        {isContacts && (
-          <ContactsList
-          />
-        )}
+        <Filter />
+        {isContacts && <ContactsList contacts={filteredContacts} />}
         {!isContacts && <p>Not yet added contacts</p>}
       </div>
     </Suspense>

@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import ContactsListItem from './ContactsListItem/ContactsListItem';
 
 import styles from './contactList.module.scss';
-import { getFilteredContacts } from 'redux/phonebook/phonebook-selectors';
 import { useSelector } from 'react-redux';
 
+import { getFilteredContacts } from 'redux/phonebook/phonebook-selectors';
+
 const ContactsList = () => {
+  const filteredContacts = useSelector(getFilteredContacts);
+
   // const contactsSorted = contacts;
   // console.log(contacts)
   // .sort(function (a, b) {
@@ -19,16 +22,8 @@ const ContactsList = () => {
   //   return 0;
   // });
 
-  const contacts = useSelector(getFilteredContacts)
-  const elements = contacts.map(({ id, name, number }) => {
-    return (
-      <ContactsListItem
-        key={id}
-        id={id}
-        name={name}
-        number={number}
-      />
-    );
+  const elements = filteredContacts.map(({ id, name, number }) => {
+    return <ContactsListItem key={id} id={id} name={name} number={number} />;
   });
 
   return <ol className={styles.list}>{elements}</ol>;
