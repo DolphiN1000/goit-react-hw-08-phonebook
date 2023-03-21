@@ -1,5 +1,5 @@
 const HomePage = () => {
-    return <h1>Welcom</h1>
+    return <h1>Welcome to the world of 'Contacts'</h1>
 };
 
 export default HomePage;
