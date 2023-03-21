@@ -1,5 +1,4 @@
-import '../../shared/styles/styles.scss';
-import { lazy, } from 'react';
+// import { lazy, } from 'react';
 
 import { fetchAllContacts } from 'redux/phonebook/phonebook-operations';
 
@@ -15,6 +14,8 @@ import { useEffect } from 'react';
 import ContactsForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactsList from './ContactList/ContactList';
+
+import '../../shared/styles/styles.scss';
 
 const Phonebook = () => {
   const filteredContacts = useSelector(getFilteredContacts);

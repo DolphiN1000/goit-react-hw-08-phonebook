@@ -10,14 +10,14 @@ import UserRoutes from 'UserRoutes';
 export const App = () => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
         <BrowserRouter>
           <AuthLayout>
             <Navbar />
             <UserRoutes />
           </AuthLayout>
         </BrowserRouter>
-      </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
   );
 };

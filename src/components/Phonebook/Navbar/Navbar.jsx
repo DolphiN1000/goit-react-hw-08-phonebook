@@ -3,7 +3,8 @@ import NavbarUser from './NavbarUser/NavbarUser';
 import { isUserLogin } from 'redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
 const Navbar = () => {
-  const isLogin = useSelector(isUserLogin);
+  const isLogin = false
+  // useSelector(isUserLogin);
 
   return (
     <div>

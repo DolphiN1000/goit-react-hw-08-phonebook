@@ -1,0 +1,16 @@
+.link {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    background-color: grey;
+    color: navy;
+    padding: 10px;
+    border-radius: 10px;
+
+    &:global(.active) {
+        font-weight: bold;
+        color: red;
+        background-color: gray;
+    }
+}
+

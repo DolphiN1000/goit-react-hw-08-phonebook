@@ -2,7 +2,9 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { FidgetSpinner } from 'react-loader-spinner';
 
-const Phonebook = lazy(() => import('components/Phonebook/Phonebook'));
+
+const HomePage = lazy (() => import('./pages/HomePage/HomePage'))
+const Phonebook = lazy(() => import('./components/Phonebook/Phonebook'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 const UserRoutes = () => {
@@ -22,10 +24,11 @@ const UserRoutes = () => {
       }
     >
       <Routes>
-        <Route path="/" element={<Phonebook />} />
+        <Route path="/" element={<HomePage />} />
         {/* <Route path="/register" element={<MoviesPage />} />
         <Route path="/login" element={<MovieDetails />} /> */}
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path='/contacts' element={<Phonebook />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );
