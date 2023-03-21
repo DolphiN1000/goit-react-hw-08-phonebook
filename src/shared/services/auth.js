@@ -12,13 +12,13 @@ const setToken = token => {
 }
 
 export const signup = async (data) => {
-    const {data:result} = await phonebookInstance.post('/user/signup', data);
+    const {data:result} = await phonebookInstance.post('/users/signup', data);
     setToken(result.token);
     return result;
 }
 
 export const login = async (data) => {
-    const{data: result} = await phonebookInstance.post('/user/login', data);
+    const{data: result} = await phonebookInstance.post('/users/login', data);
     setToken(result.token);
     return result;
 }
@@ -26,7 +26,7 @@ export const login = async (data) => {
 export const getCurrent = async (token) => {
     try {
         setToken();
-        const {data} = await phonebookInstance.get('/user/current');
+        const {data} = await phonebookInstance.get('/users/current');
         return data;
     }
     catch(error) {
@@ -37,7 +37,7 @@ export const getCurrent = async (token) => {
 }
 
 export const logout = async() => {
-    const {data} = await phonebookInstance.post('user/logout');
+    const {data} = await phonebookInstance.post('users/logout');
     setToken();
     return data;
 

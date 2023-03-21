@@ -3,11 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { FidgetSpinner } from 'react-loader-spinner';
 
 const Phonebook = lazy(() => import('components/Phonebook/Phonebook'));
-// const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviePage'));
-// const MovieDetails = lazy(() =>
-//   import('./pages/SinglMoviePage/SinglMoviePage')
-// );
-
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 const UserRoutes = () => {
@@ -27,7 +22,7 @@ const UserRoutes = () => {
       }
     >
       <Routes>
-        <Route path="/contacts" element={<Phonebook />} />
+        <Route path="/" element={<Phonebook />} />
         {/* <Route path="/register" element={<MoviesPage />} />
         <Route path="/login" element={<MovieDetails />} /> */}
         <Route path="*" element={<NotFoundPage />} />
