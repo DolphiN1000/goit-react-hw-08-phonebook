@@ -1,7 +1,7 @@
-const { default: Phonebook } = require("components/Phonebook/Phonebook")
+import Phonebook from 'components/Phonebook/Phonebook';
 
 const ContactsPage = () => {
-    return <Phonebook />
-}
+  return <Phonebook />;
+};
 
-export default ContactsPage
+export default ContactsPage;
