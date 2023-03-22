@@ -2,14 +2,14 @@ const fields = {
   email: {
     type: 'email',
     name: 'email',
-    require: true,
+    required: true,
     label: 'User email',
     placeholder: 'User email',
   },
   password: {
     type: 'password',
     name: 'password',
-    require: true,
+    required: true,
     label: 'User password',
     placeholder: 'User password',
   },
