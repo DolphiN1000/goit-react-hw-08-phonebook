@@ -22,11 +22,11 @@ const Phonebook = () => {
   return (
     <div className={styles.container}>
       <h1>Phonebook</h1>
-      {/* <ContactsForm /> */}
+      <ContactsForm />
       <h2>Contacts</h2>
-      {/* <Filter /> */}
-      {/* {isContacts && <ContactsList />} */}
-      {/* {isContacts && <p>Not yet added contacts</p>} */}
+      <Filter />
+      {isContacts && <ContactsList />}
+      {isContacts && <p>Not yet added contacts</p>}
     </div>
   );
 };
