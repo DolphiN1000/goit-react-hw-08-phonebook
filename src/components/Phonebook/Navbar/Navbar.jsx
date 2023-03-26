@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const isLogin = useSelector(isUserLogin);
-
   return (
     <div>
       {!isLogin && <NavbarAuth />}

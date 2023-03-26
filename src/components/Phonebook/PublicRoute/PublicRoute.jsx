@@ -12,7 +12,7 @@ const PublicRoute = () => {
     return <Spiner />;
   }
 
-  if (!isLogin) {
+  if (isLogin) {
     return <Navigate to="/contacts" />;
   }
   return <Outlet />;
