@@ -25,7 +25,7 @@ export const login = async data => {
 
 export const getCurrent = async token => {
   try {
-    setToken();
+    setToken(token);
     const { data } = await phonebookInstance.get('/users/current');
     return data;
   } catch (error) {

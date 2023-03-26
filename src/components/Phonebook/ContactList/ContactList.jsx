@@ -1,15 +1,27 @@
 import PropTypes from 'prop-types';
 
 import ContactsListItem from './ContactsListItem/ContactsListItem';
+import Spiner from '../Spiner/Spiner';
 
 import styles from './contactList.module.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getFilteredContacts } from 'redux/phonebook/phonebook-selectors';
+import {
+  getFilteredContacts,
+  isLoadingContacts,
+} from 'redux/phonebook/phonebook-selectors';
+import { useEffect } from 'react';
+import { fetchAllContacts } from 'redux/phonebook/phonebook-operations';
 
 const ContactsList = () => {
-  const filteredContacts = useSelector(getFilteredContacts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAllContacts());
+  }, [dispatch]);
 
+  const filteredContacts = useSelector(getFilteredContacts);
+  // const isContacts = Boolean(filteredContacts.length);
+  const isLoading = useSelector(isLoadingContacts);
   // const contactsSorted = contacts;
   // console.log(contacts)
   // .sort(function (a, b) {
@@ -22,11 +34,18 @@ const ContactsList = () => {
   //   return 0;
   // });
 
+  if (isLoading) {
+    return <Spiner />;
+  }
   const elements = filteredContacts.map(({ id, name, number }) => {
     return <ContactsListItem key={id} id={id} name={name} number={number} />;
   });
 
-  return <ol className={styles.list}>{elements}</ol>;
+  return !elements.length > 0 ? (
+    <p>Not yet added contacts</p>
+  ) : (
+    <ol className={styles.list}>{elements}</ol>
+  );
 };
 
 export default ContactsList;
