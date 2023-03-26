@@ -34,7 +34,7 @@ export const getCurrent = async token => {
   }
 };
 
-export const logout = async (token) => {
+export const logout = async token => {
   const { data } = await phonebookInstance.post('users/logout', token);
   setToken();
   return data;
