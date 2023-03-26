@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import initialState from './initialState';
+import Button from 'shared/components/Button/Button';
 
 import styles from './contactForm.module.scss';
 import { useDispatch } from 'react-redux';
@@ -53,9 +54,9 @@ const ContactsForm = () => {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
-      <button className={styles.button} type="submit">
+      <Button>
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };

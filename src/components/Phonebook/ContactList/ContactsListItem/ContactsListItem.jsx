@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { fetchDeleteContact } from 'redux/phonebook/phonebook-operations';
 
+import Button from 'shared/components/Button/Button';
+
 // import styles from './contactsListItem.module.scss';
 
 const ContactsListItem = ({ id, name, number }) => {
@@ -15,9 +17,9 @@ const ContactsListItem = ({ id, name, number }) => {
   return (
     <li>
       {name}: {number}
-      <button id={id} onClick={() => handleDeleteContact(id)}>
+      <Button id={id} onClick={() => handleDeleteContact(id)}>
         Delete
-      </button>
+      </Button>
     </li>
   );
 };
