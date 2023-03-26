@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[714],{6714:function(e,o,t){t.r(o),t.d(o,{default:function(){return r}});var n="homePage_container__R3UMw",c=t(3329),r=function(){return(0,c.jsx)("h1",{className:n,children:"Welcome to the world of 'Contacts'"})}}}]);
+//# sourceMappingURL=714.8fca812d.chunk.js.map
