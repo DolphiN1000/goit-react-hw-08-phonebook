@@ -1,16 +1,26 @@
 .link {
-    display: inline-block;
-    margin: 10px;
-    text-decoration: none;
-    background-color: grey;
-    color: navy;
-    padding: 10px;
-    border-radius: 10px;
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  background-color: var(--background-dark-color);
+  color: var(--background-light-color);
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px var(--button-border-color);
 
-    &:global(.active) {
-        font-weight: bold;
-        color: red;
-        background-color: gray;
+  &:global(.active) {
+    font-weight: bold;
+    color: var(--background-dark-color);
+    background-color: var(--background-light-color);
+    &:hover {
+      background-color: var(--background-dark-color);
+      color: var(--background-light-color);
+      border-inline: solid 4px var(--button-border-color);
     }
+  }
+  &:hover {
+    background-color: var(--background-light-color);
+    color: var(--background-dark-color);
+    border-inline: solid 4px var(--button-border-color);
+  }
 }
-

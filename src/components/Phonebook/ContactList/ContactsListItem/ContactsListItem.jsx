@@ -5,8 +5,6 @@ import { fetchDeleteContact } from 'redux/phonebook/phonebook-operations';
 
 import Button from 'shared/components/Button/Button';
 
-// import styles from './contactsListItem.module.scss';
-
 const ContactsListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 

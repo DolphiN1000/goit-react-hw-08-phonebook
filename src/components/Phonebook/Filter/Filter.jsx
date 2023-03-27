@@ -11,7 +11,7 @@ const Filter = ({ value }) => {
   };
 
   return (
-    <div 
+    <div
     // className={styles.filter}
     >
       <label>Finde contacts by name</label>

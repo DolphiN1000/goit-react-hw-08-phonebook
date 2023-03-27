@@ -2,8 +2,8 @@
   display: inline-block;
   margin: 10px;
   text-decoration: none;
-  background-color: #a6a6a6;
-  color: #0003ab;
+  background-color: var(--background-dark-color);
+  color: var(--background-light-color);
   padding: 10px;
   border-radius: 10px;
 
@@ -13,7 +13,8 @@
     background-color: #a6a6a6;
   }
   &:hover {
-    background-color: #0fffff;
-    border-inline: solid 4px black;
+    background-color: var(--background-light-color);
+    color: var(--background-dark-color);
+    border-inline: solid 4px var(--button-border-color);
   }
 }

@@ -1,5 +1,43 @@
 @import 'reset';
 
+
+
+:root {
+  background-color: gray;
+
+  /*Fonts*/
+  --main-font-family: 'Roboto', sans-serif;
+
+  /*Colors*/
+  --main-dark-color: #000000;
+  --main-light-color: #ffffff;
+
+  --spiner-bg-color: #1b4965;
+  --spiner-firs-color: #f5e663;
+  --spiner-secondary-color: #48233c;
+  --spiner-therd-color: #f25f5c;
+  --background-dark-color: #1b4965;
+  --background-light-color: #f25f5c;
+  --backgronud-button-color: #1b4965;
+  --button-color: #1b4965;
+  --button-hover-color: #f25f5c;
+  --navbar-color: #f25f5c;
+
+  --button-border-color: #000000;
+}
+
+input {
+  background-color: var(--spiner-secondary-color);
+}
+
+::placeholder {
+  color: var(--spiner-firs-color);
+  background-color: var(--spiner-secondary-color);
+  opacity: 0.5;
+}
+
 body {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  // font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: var(--main-font-family);
+
 }

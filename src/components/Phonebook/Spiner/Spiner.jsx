@@ -11,8 +11,8 @@ const Spiner = () => {
         ariaLabel="dna-loading"
         wrapperStyle={{}}
         wrapperClass="dna-wrapper"
-        ballColors={['#fffd53', '#0003ab', '#ff0000']}
-        backgroundColor="#a6a6a6"
+        ballColors={['#f5e663', '#48233c', '#f25f5c']}
+        backgroundColor="#1b4965"
       />
     </div>
   );

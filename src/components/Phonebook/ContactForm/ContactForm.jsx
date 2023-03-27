@@ -54,9 +54,7 @@ const ContactsForm = () => {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
-      <Button>
-        Add contact
-      </Button>
+      <Button>Add contact</Button>
     </form>
   );
 };

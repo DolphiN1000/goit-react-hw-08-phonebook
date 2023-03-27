@@ -1,12 +1,14 @@
 import { nanoid } from '@reduxjs/toolkit';
-import { memo } from 'react';
+import { useMemo } from 'react';
 import styles from './button.module.scss';
 
-const Button = ({children, type = 'submit', id, onClick}) => {
-  if (!id) id = memo(nanoid())
+const Button = ({ children, type = 'submit', id, onClick }) => {
+  const idGen = useMemo(() => nanoid(), []);
+  if (!id) {
+    id = idGen;
+  }
   return (
-    <button type={type} 
-    id={id} onClick={onClick} className={styles.button}>
+    <button type={type} id={id} onClick={onClick} className={styles.button}>
       {children}
     </button>
   );
