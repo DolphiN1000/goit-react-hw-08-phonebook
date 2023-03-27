@@ -1,4 +1,4 @@
-import phonebookInstance from "./auth";
+import phonebookInstance from './auth';
 
 export const getAllContacts = async () => {
   const { data } = await phonebookInstance.get('/contacts/');
