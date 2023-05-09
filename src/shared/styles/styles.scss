@@ -12,19 +12,43 @@
   --main-dark-color: #000000;
   --main-light-color: #ffffff;
 
-  --spiner-bg-color: #1b4965;
+  --spiner-bg-color: #122E40;
   --spiner-firs-color: #f5e663;
   --spiner-secondary-color: #48233c;
-  --spiner-therd-color: #f25f5c;
-  --background-dark-color: #1b4965;
-  --background-light-color: #f25f5c;
-  --backgronud-button-color: #1b4965;
-  --button-color: #1b4965;
-  --button-hover-color: #f25f5c;
-  --navbar-color: #f25f5c;
+  --spiner-therd-color: #F4A19F;
+  --background-dark-color: #122E40;
+  --background-light-color: #F4A19F;
+  --backgronud-button-color: #122E40;
+  --button-color: #122E40;
+  --button-hover-color: #F4A19F;
+  --navbar-color: #F4A19F;
 
   --button-border-color: #000000;
 }
+
+// :root {
+//   background-color: gray;
+
+//   /*Fonts*/
+//   --main-font-family: 'Roboto', sans-serif;
+
+//   /*Colors*/
+//   --main-dark-color: #000000;
+//   --main-light-color: #ffffff;
+
+//   --spiner-bg-color: #122E40;
+//   --spiner-firs-color: #f5e663;
+//   --spiner-secondary-color: #48233c;
+//   --spiner-therd-color: #F4A19F;
+//   --background-dark-color: #122E40;
+//   --background-light-color: #F4A19F;
+//   --backgronud-button-color: #122E40;
+//   --button-color: #122E40;
+//   --button-hover-color: #F4A19F;
+//   --navbar-color: #F4A19F;
+
+//   --button-border-color: #000000;
+// }
 
 input {
   background-color: var(--spiner-secondary-color);
